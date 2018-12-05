@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.xuge.sampletest.R;
+import com.xuge.sampletest.service.client.ClientActivity;
 
 public class ServiceTestActivity extends AppCompatActivity {
     private static final String TAG = "xuge";
@@ -76,5 +77,9 @@ public class ServiceTestActivity extends AppCompatActivity {
     public void unbindService(View view) {
         Log.d(TAG, "Click -->  unbindService");
         unbindService(serviceConnection);
+    }
+
+    public void testAidlService(View view) {
+        startActivity(new Intent(this, ClientActivity.class));
     }
 }

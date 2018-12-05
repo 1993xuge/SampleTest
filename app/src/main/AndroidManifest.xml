@@ -21,6 +21,10 @@
         <activity android:name=".service.ServiceTestActivity" />
 
         <service android:name=".service.CustomService" />
+        <activity android:name=".service.client.ClientActivity" />
+        <service
+            android:name=".service.server.RemoteService"
+            android:process=":xuge" />
     </application>
 
 </manifest>
