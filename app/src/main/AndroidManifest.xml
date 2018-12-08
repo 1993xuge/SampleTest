@@ -25,6 +25,8 @@
         <service
             android:name=".service.server.RemoteService"
             android:process=":xuge" />
+
+        <activity android:name=".bitmap.BitmapTestActivity"></activity>
     </application>
 
 </manifest>
