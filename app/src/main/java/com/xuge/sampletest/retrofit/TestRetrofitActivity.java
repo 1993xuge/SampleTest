@@ -3,6 +3,8 @@ package com.xuge.sampletest.retrofit;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.xuge.sampletest.R;
+
 public class TestRetrofitActivity extends AppCompatActivity {
 
     @Override

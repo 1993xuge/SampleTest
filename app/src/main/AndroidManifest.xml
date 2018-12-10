@@ -29,6 +29,7 @@
             android:process=":xuge" />
 
         <activity android:name=".retrofit.TestRetrofitActivity"></activity>
+        <activity android:name=".bitmap.BitmapTestActivity"></activity>
     </application>
 
 </manifest>
