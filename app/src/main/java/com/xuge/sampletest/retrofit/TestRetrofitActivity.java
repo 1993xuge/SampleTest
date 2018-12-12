@@ -1,9 +1,12 @@
 package com.xuge.sampletest.retrofit;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 
 import com.xuge.sampletest.R;
+import com.xuge.sampletest.retrofit.bean.BookResponse;
 import com.xuge.sampletest.retrofit.bean.BookSearchResponse;
 
 import java.io.IOException;
@@ -14,7 +17,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
@@ -23,12 +25,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class TestRetrofitActivity extends AppCompatActivity {
 
+    private static final String TAG = TestRetrofitActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_retrofit);
     }
 
+    public void testRetrofit(View view) {
+        testRetrofit();
+    }
     private void testRetrofit() {
         // baseUrl就是网络请求URL相对固定的地址，一般包括请求协议（如Http）、域名或IP地址、端口号等
         //addConverterFactory方法表示需要用什么转换器来解析返回值，GsonConverterFactory.create()表示调用Gson库来解析json返回值
@@ -36,8 +42,9 @@ public class TestRetrofitActivity extends AppCompatActivity {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.douban.com/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
+
 
         BlueService blueService = retrofit.create(BlueService.class);
 
@@ -55,8 +62,13 @@ public class TestRetrofitActivity extends AppCompatActivity {
         // 使用Call实例完成同步或异步请求
         // testCallSync(call);
 
-        //testCallAsync(call);
+        testCallAsync(call);
 
+    }
+
+    private void getBook(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .
     }
 
     private void testCallSync(final Call<BookSearchResponse> call) {
@@ -76,6 +88,14 @@ public class TestRetrofitActivity extends AppCompatActivity {
         call.enqueue(new Callback<BookSearchResponse>() {
             @Override
             public void onResponse(Call<BookSearchResponse> call, Response<BookSearchResponse> response) {
+                BookSearchResponse  bookSearchResponse = response.body();
+                Log.d(TAG, this.hashCode() + "   onResponse: count " + bookSearchResponse.getCount());
+                Log.d(TAG, this.hashCode() + "   onResponse: start " + bookSearchResponse.getStart());
+                Log.d(TAG, this.hashCode() + "   onResponse: total " + bookSearchResponse.getTotal());
+
+                for(BookResponse bookResponse : bookSearchResponse.getBooks()){
+                    Log.d(TAG, this.hashCode() + "   onResponse: title " + bookResponse.getTitle());
+                }
 
             }
 
@@ -85,4 +105,5 @@ public class TestRetrofitActivity extends AppCompatActivity {
             }
         });
     }
+
 }

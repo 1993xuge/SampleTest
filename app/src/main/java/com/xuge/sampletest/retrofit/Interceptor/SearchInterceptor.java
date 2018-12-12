@@ -12,7 +12,7 @@ public class SearchInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         HttpUrl httpUrl = request.url().newBuilder()
-                .addQueryParameter("token", "tokenValue")
+                .addQueryParameter("q", "小王子")
                 .build();
         request = request.newBuilder().url(httpUrl).build();
 

@@ -89,7 +89,7 @@ public class GsonUtils {
     private static void bookFromJson() {
         Gson gson = new Gson();
         BookResponse bookResponse = gson.fromJson(Constants.book, BookResponse.class);
-        System.out.println(bookResponse.getSubtitle());
+        System.out.println(bookResponse.getSummary());
     }
 
     private static void newsFromJson() {
