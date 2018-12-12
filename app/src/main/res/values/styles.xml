@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+   <!-- <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDisablePreview">true</item>
+        &lt;!&ndash;<item name="colorPrimary">@android:color/white</item>&ndash;&gt;
+
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>-->
+
+    <style name="AppTheme.Launcher">
+        <!--关闭启动窗口-->
+        <!--<item name="android:windowDisablePreview">true</item>-->
+        <item name="android:windowBackground">@drawable/branded_launch_screens</item>
+    </style>
+
 </resources>

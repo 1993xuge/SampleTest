@@ -1,17 +1,16 @@
 package com.xuge.sampletest;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
-import com.xuge.sampletest.retrofit.TestRetrofitActivity;
 import com.xuge.sampletest.bitmap.BitmapTestActivity;
+import com.xuge.sampletest.retrofit.TestRetrofitActivity;
 import com.xuge.sampletest.service.ServiceTestActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
