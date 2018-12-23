@@ -8,10 +8,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/DesignPattern" />
             <option value="$PROJECT_DIR$/JavaTest" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app1" />
             <option value="$PROJECT_DIR$/app2" />
+            <option value="$PROJECT_DIR$/rxjavatest" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
