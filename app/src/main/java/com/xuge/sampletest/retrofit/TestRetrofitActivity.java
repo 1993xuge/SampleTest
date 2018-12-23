@@ -67,8 +67,6 @@ public class TestRetrofitActivity extends AppCompatActivity {
     }
 
     private void getBook(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .
     }
 
     private void testCallSync(final Call<BookSearchResponse> call) {
